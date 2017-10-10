@@ -6,20 +6,20 @@ class Anagram
   end
 
   def find_anagrams
-    @result = Hash.new { |hash, key| hash[key] = [] }
+    result = Hash.new { |hash, key| hash[key] = [] }
 
     @file.each_line do |word|
       letters_sorted = word.downcase.chars.sort.join
 
-      @result[letters_sorted] << word.chomp
+      result[letters_sorted] << word.chomp
     end
 
-    @result
+    result
   end
 
-  def count_anagrams
+  def count_anagrams(result)
     counter = 0
-    @result.each do |k, v|
+    result.each do |k, v|
       if v.length > 1
         counter += 1
       end
@@ -27,9 +27,9 @@ class Anagram
     counter
   end
 
-  def show_anagrams
-    @result.each do |k, v|
-      puts v.join(", ")
+  def show_anagrams(result)
+    result.each do |k, v|
+      puts v.join(", ") if v.length>1
     end
   end
 
