@@ -1,5 +1,5 @@
 class Anagram
-  attr_reader :result
+  
 
   def initialize(file_name)
     @file = File.open(file_name)

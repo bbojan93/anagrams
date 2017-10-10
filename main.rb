@@ -6,4 +6,4 @@ anagram = Anagram.new(name)
 puts "Anagrams found:"
 puts "#{anagram.count_anagrams}"
 
-anagram.show_anagram
+#anagram.show_anagram
