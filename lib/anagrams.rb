@@ -1,23 +1,16 @@
 class Anagram
-  
+
 
   def initialize(file_name)
     @file = File.open(file_name)
   end
 
-  def encode_file
-    encoded = []
-    @file.each do |word|
-      encoded << word.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
-    end
-    encoded
-  end
 
   def find_anagrams
     @result = Hash.new { |hash, key| hash[key] = [] }
 
-    encode_file.each do |word|
-      letters_sorted = word.downcase.chars.sort.join
+    @file.each do |word|
+      letters_sorted = word.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '').downcase.chars.sort.join
 
       @result[letters_sorted] << word.chomp
     end
