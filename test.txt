@@ -5,9 +5,13 @@ silent
 Enlist
 google
 reset's
-loco
+ loco
 cool
 fresher
 rots
 refresh
 Sort
+banana
+resets
+a
+A
